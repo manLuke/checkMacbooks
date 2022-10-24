@@ -1,0 +1,21 @@
+{
+  "name": "checkmacbooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --ignore src/json/sawProducts.json --exec ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "author": "Tomas Kacha",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.4",
+    "@types/puppeteer": "^5.4.7",
+    "ts-node": "^10.9.1"
+  }
+}
