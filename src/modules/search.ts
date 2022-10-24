@@ -4,8 +4,10 @@ import scraping from "./scraping";
 const pathsJson = require("../json/paths.json");
 const paths = pathsJson[0];
 const puppeteer = require("puppeteer");
-export const search = async (page: Page, item: Item) => {
+export const search = async (browser: Browser, item: Item) => {
   try {
+    const pages = await browser.pages();
+    const page = pages[0];
     await page.goto("https://www.bazos.cz/");
     await page.type(paths.search, item.search);
     if (item.location) {
@@ -30,10 +32,9 @@ export const search = async (page: Page, item: Item) => {
     const links = await page.$$eval(paths.results, (links: any) =>
       links.map((link: any) => link.href)
     );
-
-    links.forEach(async (link: string) => {
-      await scraping(link, item);
-    });
+    for (const link of links) {
+      await scraping(browser, link, item);
+    }
   } catch (error) {
     console.log(error);
   }

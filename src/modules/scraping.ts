@@ -1,4 +1,4 @@
-import { Page } from "puppeteer";
+import { Browser, Page } from "puppeteer";
 import { Item } from "../types/item";
 import { check } from "./check";
 import { daysDifference } from "./daysDifference";
@@ -7,15 +7,16 @@ const puppeteer = require("puppeteer");
 const pahtsJson = require("../json/paths.json");
 const paths = pahtsJson[1];
 
-const scraping = async (url: string, item: Item) => {
+const scraping = async (browser: Browser, url: string, item: Item) => {
   try {
-    const browser = await puppeteer.launch({ headless: true });
-    const pages: Page[] = await browser.pages();
-    const page: Page = pages[0];
-    await page.setViewport({
-      width: 1366,
-      height: 768,
-    });
+    // const browser = await puppeteer.launch({ headless: true });
+    // const pages: Page[] = await browser.pages();
+    // const page: Page = pages[0];
+    // await page.setViewport({
+    //   width: 1366,
+    //   height: 768,
+    // });
+    const page = await browser.newPage();
     await page.goto(url);
     const title = await page.$eval(paths.title, (el: any) => el.textContent);
     const description = await page.$eval(
@@ -31,7 +32,7 @@ const scraping = async (url: string, item: Item) => {
     date = new Date(date).toLocaleDateString();
     const days = daysDifference(new Date(), new Date(date));
     const data = { url, title, description, price, date, top };
-    await browser.close();
+    // await browser.close();
     if (item.days) {
       if (days >= item.days ) {
         return;

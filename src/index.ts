@@ -16,9 +16,10 @@ const scrape = async () => {
       width: 1366,
       height: 768,
     });
-    items.forEach(async (item: Item) => {
-      await search(page, item);
-    });
+    for (const item of items) {
+      await search(browser, item);
+    }
+    browser.close();
   } catch (error) {
     console.log(error);
   }
