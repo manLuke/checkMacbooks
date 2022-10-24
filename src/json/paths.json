@@ -1,0 +1,13 @@
+[
+  {
+    "serach": "#hledat",
+    "location": "#hlokalita",
+    "priceUpTo": ".rubriky > b:nth-child(1) > input:nth-child(6)",
+    "submit": ".rubriky > b:nth-child(1) > input:nth-child(7)"
+  },
+  {
+    "title": ".nadpisdetail",
+    "description": ".popisdetail",
+    "price": ".listadvlevo > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(2) > b:nth-child(2)"
+  }
+]
