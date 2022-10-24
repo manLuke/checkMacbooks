@@ -9,6 +9,7 @@
     "search": "Apple macbook pro m1 16gb",
     "location": 11000,
     "priceMin": "25000",
-    "priceMax": "35000"
+    "priceMax": "35000",
+    "days": 2
   }
 ]

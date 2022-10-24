@@ -9,7 +9,7 @@ const puppeteer = require("puppeteer");
 export const check = async (data: Product) => {
   try {
     if (!products.some(product => product.url === data.url)) {
-      data.added = new Date().toISOString();
+      data.added = new Date().toLocaleDateString();
       products.push(data);
       await fs.writeFileSync(`${__dirname}/../json/sawProducts.json`, JSON.stringify(products))
     }

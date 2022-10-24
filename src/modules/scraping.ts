@@ -28,9 +28,9 @@ const scraping = async (url: string, item: Item) => {
     date = date.split('').slice(date.indexOf('[')+1, date.indexOf(']'));
     date.splice(date.indexOf(" "), 1);
     date = date.join('').split('.').reverse();
-    date = new Date(date);
-    const days = daysDifference(new Date(), date);
-    const data = { url, title, description, price, date: date, top };
+    date = new Date(date).toLocaleDateString();
+    const days = daysDifference(new Date(), new Date(date));
+    const data = { url, title, description, price, date, top };
     await browser.close();
     if (item.days) {
       if (days >= item.days ) {
