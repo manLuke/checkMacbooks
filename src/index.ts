@@ -9,7 +9,7 @@ const url = "https://pc.bazos.cz/inzerat/158408944/macbook-air-13-m2-2022-cz-dis
 const scrape = async () => {
   try {
     await check30days(products);
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ headless: true });
     const pages = await browser.pages();
     const page = pages[0];
     await page.setViewport({
