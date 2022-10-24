@@ -1,13 +1,17 @@
 [
   {
-    "serach": "#hledat",
+    "search": "#hledat",
     "location": "#hlokalita",
-    "priceUpTo": ".rubriky > b:nth-child(1) > input:nth-child(6)",
-    "submit": ".rubriky > b:nth-child(1) > input:nth-child(7)"
+    "around": ".rubriky > b:nth-child(1) > input:nth-child(4)",
+    "priceMin": ".rubriky > b:nth-child(1) > input:nth-child(5)",
+    "priceMax": ".rubriky > b:nth-child(1) > input:nth-child(6)",
+    "searchButton": ".rubriky > b:nth-child(1) > input:nth-child(7)",
+    "results": "html body div.sirka div.flexmain div.maincontent div.inzeraty.inzeratyflex div.inzeratynadpis h2.nadpis a"
   },
   {
     "title": ".nadpisdetail",
     "description": ".popisdetail",
-    "price": ".listadvlevo > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(2) > b:nth-child(2)"
+    "price": ".listadvlevo > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(2) > b:nth-child(2)",
+    "date": "span.velikost10:nth-child(2)"
   }
 ]

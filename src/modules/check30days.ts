@@ -2,13 +2,13 @@
 
 import fs from 'fs';
 import { Product } from '../types/products';
+import { daysDifference } from './daysDifference';
 
 export const check30days = async (products: Product[]) => {
   try {
     products.forEach(async product => {
       if (product.added) {
-        const difference = new Date().getTime() - new Date(product.added).getTime();
-        const days = difference / (1000 * 3600 * 24);
+        const days = daysDifference(new Date(), new Date(product.added));
         if (days > 30) {
           const index = products.indexOf(product);
           products.splice(index, 1);

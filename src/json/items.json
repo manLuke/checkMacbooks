@@ -1,0 +1,14 @@
+[
+  {
+    "search": "Apple macbook m2 2022",
+    "location": 11000,
+    "priceMax": "35000",
+    "days": 5
+  },
+  {
+    "search": "Apple macbook pro m1 16gb",
+    "location": 11000,
+    "priceMin": "25000",
+    "priceMax": "35000"
+  }
+]

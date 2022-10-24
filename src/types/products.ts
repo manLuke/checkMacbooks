@@ -3,6 +3,7 @@ export type Product = {
   title: string;
   description: string;
   price: string;
-  data?: string;
+  date?: string;
   added?: string;
+  top: boolean;
 }
