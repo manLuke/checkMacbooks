@@ -16,7 +16,7 @@ const scrape = async () => {
       width: 1366,
       height: 768,
     });
-    for (const item of items) {
+    for (let item of items) {
       await search(browser, item);
     }
     browser.close();

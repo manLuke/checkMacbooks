@@ -32,7 +32,7 @@ export const search = async (browser: Browser, item: Item) => {
     const links = await page.$$eval(paths.results, (links: any) =>
       links.map((link: any) => link.href)
     );
-    for (const link of links) {
+    for (let link of links) {
       await scraping(browser, link, item);
     }
   } catch (error) {
