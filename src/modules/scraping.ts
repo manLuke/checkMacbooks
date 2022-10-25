@@ -9,13 +9,6 @@ const paths = pahtsJson[1];
 
 const scraping = async (browser: Browser, url: string, item: Item) => {
   try {
-    // const browser = await puppeteer.launch({ headless: true });
-    // const pages: Page[] = await browser.pages();
-    // const page: Page = pages[0];
-    // await page.setViewport({
-    //   width: 1366,
-    //   height: 768,
-    // });
     const page = await browser.newPage();
     await page.goto(url);
     const title = await page.$eval(paths.title, (el: any) => el.textContent);
@@ -31,8 +24,7 @@ const scraping = async (browser: Browser, url: string, item: Item) => {
     date = date.join('').split('.').reverse();
     date = new Date(date).toLocaleDateString();
     const days = daysDifference(new Date(), new Date(date));
-    const data = { url, title, description, price, date, top };
-    // await browser.close();
+    const data = { url, title, description, price, date, top, search: item.search};
     if (item.days) {
       if (days >= item.days ) {
         return;

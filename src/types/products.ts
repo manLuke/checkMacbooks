@@ -1,4 +1,5 @@
 export type Product = {
+  search: string;
   url: string;
   title: string;
   description: string;
@@ -6,4 +7,4 @@ export type Product = {
   date?: string;
   added?: string;
   top: boolean;
-}
+};
