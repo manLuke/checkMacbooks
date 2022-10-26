@@ -7,4 +7,5 @@ export type Product = {
   date?: string;
   added?: string;
   top: boolean;
+  image_url: string;
 };

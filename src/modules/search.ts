@@ -28,7 +28,12 @@ export const search = async (browser: Browser, item: Item) => {
       await page.type(paths.priceMax, item.priceMax.toString());
     }
     await page.click(paths.searchButton);
-    await page.waitForSelector(paths.results);
+    await page.waitForSelector(paths.searchButton);
+    // check if there are any results
+    const checkResult = await page.$(paths.results);
+    if (!checkResult) {
+      return;
+    }
     const links = await page.$$eval(paths.results, (links: any) =>
       links.map((link: any) => link.href)
     );
