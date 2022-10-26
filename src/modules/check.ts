@@ -1,5 +1,5 @@
 // Check if the product has not already been registered and sent by email
-
+import { sendEmail } from './sendEmail';
 import { Product } from '../types/products';
 const products: Product[] = require('../json/sawProducts.json');
 
@@ -12,6 +12,7 @@ export const check = async (data: Product) => {
       data.added = new Date().toLocaleDateString();
       products.push(data);
       await fs.writeFileSync(`${__dirname}/../json/sawProducts.json`, JSON.stringify(products))
+      await sendEmail(data);
     }
   } catch (error) {
     console.log(error);
