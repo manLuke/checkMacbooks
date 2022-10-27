@@ -23,7 +23,7 @@ export const sendEmail = async (data: Product) => {
     text: `${data.title} - ${data.description} - ${data.price}`
   };
 
-  transporter.sendMail(mailOptions, function(err: any, data: any) {
+  await transporter.sendMail(mailOptions, function(err: any, data: any) {
     if (err) {
       console.log("Error " + err);
     } else {
