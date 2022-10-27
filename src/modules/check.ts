@@ -1,4 +1,6 @@
-// Check if the product has not already been registered and sent by email
+// this function check if the product has not already been registered and sent by email
+// if the product has not been registered, the ./sendEmail.ts function is called
+
 import { sendEmail } from './sendEmail';
 import { Product } from '../types/products';
 const products: Product[] = require('../json/sawProducts.json');

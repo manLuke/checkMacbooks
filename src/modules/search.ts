@@ -1,3 +1,6 @@
+// this function fills the parameters into the search engine
+// if there is any result for the search, then each result will be scraped in the ./scraping.ts function
+
 import { Browser, Page } from "puppeteer";
 import { Item } from "../types/item";
 import scraping from "./scraping";

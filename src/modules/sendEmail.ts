@@ -1,3 +1,6 @@
+// this function will send an email with product data
+// to use gmail, it's necessary to get OAuth 2.0 Client IDs from google cloud API & Services and get the refresh token
+
 const nodemailer = require('nodemailer');
 import { Product } from "../types/products";
 

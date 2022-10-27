@@ -1,3 +1,5 @@
+// this function saves the data about the given product and calls the ./check.ts function
+
 import { Browser, Page } from "puppeteer";
 import { Item } from "../types/item";
 import { check } from "./check";
@@ -22,7 +24,7 @@ const scraping = async (browser: Browser, url: string, item: Item) => {
     let date = await page.$eval(paths.date, (el: any) => el.textContent);
     let top = date.includes("TOP");
 
-    // get date from string
+    // get date from scraped date string
     date = date.split('').slice(date.indexOf('[')+1, date.indexOf(']'));
     date.splice(date.indexOf(" "), 1);
     date = date.join('').split('.').reverse();
