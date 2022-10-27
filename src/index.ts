@@ -6,7 +6,6 @@ const products = require("./json/sawProducts.json");
 const puppeteer = require("puppeteer");
 const schedule = require("node-schedule");
 
-const url = "https://pc.bazos.cz/inzerat/158408944/macbook-air-13-m2-2022-cz-distribuce-zaruka-odpocet-dph.php";
 const scrape = async () => {
   try {
     const browser = await puppeteer.launch({ headless: true });
