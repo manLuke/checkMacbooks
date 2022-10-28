@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    container_name: app
+    build:
+      context: ./
+      dockerfile: dockerfile
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    environment:
+      - MAIL_USERNAME=${MAIL_USERNAME}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+      - OAUTH_CLIENTID=${OAUTH_CLIENTID}
+      - OAUTH_CLIENT_SECRET=${OAUTH_CLIENT_SECRET}
+      - OAUTH_REFRESH_TOKEN=${OAUTH_REFRESH_TOKEN}
